@@ -1,16 +1,9 @@
-import { useState, useEffect } from "react";
 import Input from "./components/shared/input";
+import useLocalStorage from "./components/hooks/useLocalStorage";
 
 export default function App() {
-  const [todos, setTodos] = useState(() => {
-    const savedTodos = localStorage.getItem("todos");
-    return savedTodos ? JSON.parse(savedTodos) : [];
-  });
-
-  const [completed, setCompleted] = useState(() => {
-    const savedCompleted = localStorage.getItem("completed");
-    return savedCompleted ? JSON.parse(savedCompleted) : [];
-  });
+  const [todos, setTodos] = useLocalStorage("todos", []);
+  const [completed, setCompleted] = useLocalStorage("completed", []);
 
   const handleAddTodo = (todo) => {
     setTodos([...todos, todo]);
@@ -36,17 +29,9 @@ export default function App() {
   };
 
   const deleteDone = (index) => {
-    const newDones = todos.filter((_, i) => i !== index);
-    setCompleted(newDones);
+    const newCompleted = completed.filter((_, i) => i !== index);
+    setCompleted(newCompleted);
   };
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  useEffect(() => {
-    localStorage.setItem("completed", JSON.stringify(completed));
-  }, [completed]);
 
   return (
     <div>
@@ -60,7 +45,7 @@ export default function App() {
           {todos.map((todo, index) => (
             <li key={index}>
               <span onClick={() => handleToggleTodo(index, false)}>{todo}</span>
-              <button onClick={()=>deleteTodo(index)}>삭제</button>
+              <button onClick={() => deleteTodo(index)}>삭제</button>
             </li>
           ))}
         </ul>
@@ -71,7 +56,7 @@ export default function App() {
           {completed.map((todo, index) => (
             <li key={index}>
               <span onClick={() => handleToggleTodo(index, true)}>{todo}</span>
-              <button onClick={()=>deleteDone(index)}>삭제</button>
+              <button onClick={() => deleteDone(index)}>삭제</button>
             </li>
           ))}
         </ul>
