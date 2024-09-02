@@ -30,6 +30,16 @@ export default function App() {
     }
   };
 
+  const deleteTodo = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+  };
+
+  const deleteDone = (index) => {
+    const newDones = todos.filter((_, i) => i !== index);
+    setCompleted(newDones);
+  };
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -50,7 +60,7 @@ export default function App() {
           {todos.map((todo, index) => (
             <li key={index}>
               <span onClick={() => handleToggleTodo(index, false)}>{todo}</span>
-              <button>삭제</button>
+              <button onClick={()=>deleteTodo(index)}>삭제</button>
             </li>
           ))}
         </ul>
@@ -61,7 +71,7 @@ export default function App() {
           {completed.map((todo, index) => (
             <li key={index}>
               <span onClick={() => handleToggleTodo(index, true)}>{todo}</span>
-              <button>삭제</button>
+              <button onClick={()=>deleteDone(index)}>삭제</button>
             </li>
           ))}
         </ul>
