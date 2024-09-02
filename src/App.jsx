@@ -1,4 +1,5 @@
-import TodoList from "./components/TodoList";
+import Content from "./components/shared/Content";
+import TodoList from "./components/shared/Content";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/input";
 
@@ -40,7 +41,7 @@ export default function App() {
         <h2>투두리스트</h2>
         <Input addTodo={handleAddTodo} />
       </header>
-      <TodoList
+      <Content
         title="진행중인 Todo"
         items={todos}
         onToggle={handleToggleTodo}
