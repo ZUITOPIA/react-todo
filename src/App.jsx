@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Input from "./components/shared/input";
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
@@ -10,45 +11,45 @@ export default function App() {
     const savedCompleted = localStorage.getItem("completed");
     return savedCompleted ? JSON.parse(savedCompleted) : [];
   });
-  const [inputValue, setInputValue] = useState("");
 
-  const handleAddTodo = () => {
-    if (inputValue.trim()) {
-      setTodos([...todos, inputValue]);
-      setInputValue("");
-    }
+  const handleAddTodo = (todo) => {
+    setTodos([...todos, todo]);
   };
 
-  const handleCompleteTodo = (index) => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    const completedTodo = todos[index];
-    setTodos(newTodos);
-    setCompleted([...completed, completedTodo]);
+  const handleToggleTodo = (index, isCompleted) => {
+    if (isCompleted) {
+      const newCompleted = completed.filter((_, i) => i !== index);
+      const todoToMove = completed[index];
+      setCompleted(newCompleted);
+      setTodos([...todos, todoToMove]);
+    } else {
+      const newTodos = todos.filter((_, i) => i !== index);
+      const completedTodo = todos[index];
+      setTodos(newTodos);
+      setCompleted([...completed, completedTodo]);
+    }
   };
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
     localStorage.setItem("completed", JSON.stringify(completed));
-  }, [todos, completed]);
+  }, [completed]);
 
   return (
     <div>
       <header>
         <h2>투두리스트</h2>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="할 일을 입력하세요"
-        />
-        <button onClick={handleAddTodo}>추가</button>
+        <Input addTodo={handleAddTodo} />
       </header>
       <section>
         <h3>진행중인 Todo</h3>
         <ul>
           {todos.map((todo, index) => (
             <li key={index}>
-              <span onClick={() => handleCompleteTodo(index)}>{todo}</span>
+              <span onClick={() => handleToggleTodo(index, false)}>{todo}</span>
               <button>삭제</button>
             </li>
           ))}
@@ -58,12 +59,10 @@ export default function App() {
         <h3>완료한 Todo (DONE)</h3>
         <ul>
           {completed.map((todo, index) => (
-            <>
-              <li key={index}>
-                <span>{todo}</span>
-                <button>삭제</button>
-              </li>
-            </>
+            <li key={index}>
+              <span onClick={() => handleToggleTodo(index, true)}>{todo}</span>
+              <button>삭제</button>
+            </li>
           ))}
         </ul>
       </section>

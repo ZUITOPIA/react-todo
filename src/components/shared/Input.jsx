@@ -1,4 +1,4 @@
-import useInput from "../hooks/useInput";
+import useInput from "../hooks/useInput"; // useInput 훅의 경로를 맞게 설정하세요
 
 export default function Input({ addTodo }) {
   const [inputValue, handleChange, setInputValue] = useInput("");
@@ -12,16 +12,14 @@ export default function Input({ addTodo }) {
   };
 
   return (
-    <>
-      <form onSubmit={handleAddTodo}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleChange}
-          placeholder="할 일을 입력하세요"
-        />
-        <button type="submit">+</button>
-      </form>
-    </>
+    <form onSubmit={handleAddTodo}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="할 일을 입력하세요"
+      />
+      <button type="submit">+</button>
+    </form>
   );
 }
