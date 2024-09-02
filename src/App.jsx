@@ -1,5 +1,6 @@
-import Input from "./components/shared/input";
+import TodoList from "./components/TodoList";
 import useLocalStorage from "./components/hooks/useLocalStorage";
+import Input from "./components/shared/input";
 
 export default function App() {
   const [todos, setTodos] = useLocalStorage("todos", []);
@@ -39,28 +40,20 @@ export default function App() {
         <h2>투두리스트</h2>
         <Input addTodo={handleAddTodo} />
       </header>
-      <section>
-        <h3>진행중인 Todo</h3>
-        <ul>
-          {todos.map((todo, index) => (
-            <li key={index}>
-              <span onClick={() => handleToggleTodo(index, false)}>{todo}</span>
-              <button onClick={() => deleteTodo(index)}>삭제</button>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section>
-        <h3>완료한 Todo (DONE)</h3>
-        <ul>
-          {completed.map((todo, index) => (
-            <li key={index}>
-              <span onClick={() => handleToggleTodo(index, true)}>{todo}</span>
-              <button onClick={() => deleteDone(index)}>삭제</button>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <TodoList
+        title="진행중인 Todo"
+        items={todos}
+        onToggle={handleToggleTodo}
+        onDelete={deleteTodo}
+        isCompleted={false}
+      />
+      <TodoList
+        title="완료한 Todo (DONE)"
+        items={completed}
+        onToggle={handleToggleTodo}
+        onDelete={deleteDone}
+        isCompleted={true}
+      />
     </div>
   );
 }
