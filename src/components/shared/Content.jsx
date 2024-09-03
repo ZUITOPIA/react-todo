@@ -4,6 +4,8 @@ import { Text } from "./UI";
 const Style = {
   Wrapper: styled.div`
     width: 100%;
+    height: 200px;
+    overflow-y: scroll;
   `,
   ItemWrapper: styled.div`
     display: flex;
@@ -12,14 +14,14 @@ const Style = {
   `,
   ContentWrapper: styled.div`
     width: 90%;
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     margin-left: 20px;
   `,
   CheckedBox: styled.div`
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background-image: url("/check.png");
     background-size: contain;
     border-radius: 20px;

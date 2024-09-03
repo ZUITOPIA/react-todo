@@ -16,7 +16,13 @@ const Style = {
   Header: styled.header`
     width: 100%;
     height: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  `,
+  TaskWrapper: styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   `,
 };
 
@@ -58,19 +64,25 @@ export default function App() {
         <Text.Title>SCHEDULE</Text.Title>
         <Input addTodo={handleAddTodo} />
       </Style.Header>
+      <Style.TaskWrapper>
+        <Text.MiniTitle>{todos.length} tasks</Text.MiniTitle>
+        <Content
+          items={todos}
+          onToggle={handleToggleTodo}
+          onDelete={deleteTodo}
+          isCompleted={false}
+        />
+      </Style.TaskWrapper>
 
-      <Content
-        items={todos}
-        onToggle={handleToggleTodo}
-        onDelete={deleteTodo}
-        isCompleted={false}
-      />
-      <Content
-        items={completed}
-        onToggle={handleToggleTodo}
-        onDelete={deleteDone}
-        isCompleted={true}
-      />
+      <Style.TaskWrapper>
+        <Text.MiniTitle>{completed.length} tasks</Text.MiniTitle>
+        <Content
+          items={completed}
+          onToggle={handleToggleTodo}
+          onDelete={deleteDone}
+          isCompleted={true}
+        />
+      </Style.TaskWrapper>
     </Style.AppWrapper>
   );
 }
