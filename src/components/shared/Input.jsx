@@ -8,19 +8,23 @@ const Style = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid lightgray;
   `,
   Input: styled.input`
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 5px;
     border: none;
+    outline: none;
   `,
   Button: styled.button`
-    width: 35px;
+    width: 40px;
     height: 35px;
-    border-radius: 40%;
+    border-radius: 100%;
     border: none;
-    background-color: #3e45c3;
+    background-color: #868686;
     color: white;
     font-size: large;
+    cursor: pointer;
   `,
 };
 

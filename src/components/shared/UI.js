@@ -8,7 +8,9 @@ export const Text = {
   `,
   Body: styled.div`
     font-weight: 350;
-    font-size: 22px;
+    font-size: 18px;
+    /* color: #cbcbcd; */
+    color: #949498;
     display: inline-block;
   `,
 };

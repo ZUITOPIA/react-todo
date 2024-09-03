@@ -1,5 +1,4 @@
 import Content from "./components/shared/Content";
-import TodoList from "./components/shared/Content";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/input";
 import styled from "@emotion/styled";
@@ -12,15 +11,12 @@ const Style = {
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     background-color: white;
-    padding: 30px;
+    padding: 40px 30px 30px 30px;
   `,
   Header: styled.header`
     width: 100%;
     height: 100px;
-  `,
-  TodoWrapper: styled.div`
-    width: 100px;
-    border: 1px solid blue;
+    margin-bottom: 20px;
   `,
 };
 
@@ -62,15 +58,14 @@ export default function App() {
         <Text.Title>SCHEDULE</Text.Title>
         <Input addTodo={handleAddTodo} />
       </Style.Header>
+
       <Content
-        title="진행중"
         items={todos}
         onToggle={handleToggleTodo}
         onDelete={deleteTodo}
         isCompleted={false}
       />
-      <TodoList
-        title="완료"
+      <Content
         items={completed}
         onToggle={handleToggleTodo}
         onDelete={deleteDone}
