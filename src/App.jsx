@@ -2,6 +2,27 @@ import Content from "./components/shared/Content";
 import TodoList from "./components/shared/Content";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/input";
+import styled from "@emotion/styled";
+import { Text } from "./components/shared/UI";
+
+const Style = {
+  AppWrapper: styled.div`
+    width: 360px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 30px;
+  `,
+  Header: styled.header`
+    width: 100%;
+    height: 100px;
+  `,
+  TodoWrapper: styled.div`
+    width: 100px;
+    border: 1px solid blue;
+  `,
+};
 
 export default function App() {
   const [todos, setTodos] = useLocalStorage("todos", []);
@@ -36,25 +57,25 @@ export default function App() {
   };
 
   return (
-    <div>
-      <header>
-        <h2>투두리스트</h2>
+    <Style.AppWrapper>
+      <Style.Header>
+        <Text.Title>SCHEDULE</Text.Title>
         <Input addTodo={handleAddTodo} />
-      </header>
+      </Style.Header>
       <Content
-        title="진행중인 Todo"
+        title="진행중"
         items={todos}
         onToggle={handleToggleTodo}
         onDelete={deleteTodo}
         isCompleted={false}
       />
       <TodoList
-        title="완료한 Todo (DONE)"
+        title="완료"
         items={completed}
         onToggle={handleToggleTodo}
         onDelete={deleteDone}
         isCompleted={true}
       />
-    </div>
+    </Style.AppWrapper>
   );
 }

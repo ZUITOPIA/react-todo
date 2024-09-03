@@ -1,3 +1,5 @@
+// import styled from "@emotion/styled";
+
 export default function Content({
   title,
   items,
@@ -7,7 +9,7 @@ export default function Content({
 }) {
   return (
     <section>
-      <h3>{title}</h3>
+      <h5>{title}</h5>
       <ul>
         {items.map((todo, index) => (
           <li key={index}>
