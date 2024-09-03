@@ -1,6 +1,6 @@
 import Content from "./components/shared/Content";
 import useLocalStorage from "./components/hooks/useLocalStorage";
-import Input from "./components/shared/input";
+import Input from "./components/shared/Input";
 import styled from "@emotion/styled";
 import { Text } from "./components/shared/UI";
 
