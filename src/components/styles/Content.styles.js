@@ -10,14 +10,8 @@ export const Style = {
   ItemWrapper: styled.div`
     display: flex;
     align-items: center;
-    padding: 0px 10px;
-  `,
-  ContentWrapper: styled.div`
     width: 90%;
     height: 40px;
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
   `,
   CheckedBox: styled.div`
     width: 18px;
@@ -25,7 +19,9 @@ export const Style = {
     background-image: url("/check.png");
     background-size: contain;
     border-radius: 20px;
+    opacity: 0.2;
     cursor: pointer;
+    margin-right: 14px;
   `,
   UnCheckedBox: styled.div`
     width: 20px;
@@ -33,6 +29,7 @@ export const Style = {
     border: 2px solid lightgray;
     border-radius: 20px;
     cursor: pointer;
+    margin-right: 14px;
   `,
   DeleteBtn: styled.div`
     width: 16px;

@@ -4,30 +4,29 @@ import { Style } from "../styles/Content.styles";
 export default function Content({ items, onToggle, onDelete, isCompleted }) {
   return (
     <Style.Wrapper>
-      <ul>
-        {items.map((todo, index) => (
+      {items.map((todo, index) => (
+        <>
           <Style.ItemWrapper key={index}>
             {isCompleted ? (
               <>
                 <Style.CheckedBox
                   onClick={() => onToggle(index, isCompleted)}
                 />
+                <Text.Body>{todo}</Text.Body>
               </>
             ) : (
               <>
                 <Style.UnCheckedBox
                   onClick={() => onToggle(index, isCompleted)}
                 />
+                <Text.Body>{todo}</Text.Body>
               </>
             )}
 
-            <Style.ContentWrapper>
-              <Text.Body>{todo}</Text.Body>
-              <Style.DeleteBtn onClick={() => onDelete(index)} />
-            </Style.ContentWrapper>
+            <Style.DeleteBtn onClick={() => onDelete(index)} />
           </Style.ItemWrapper>
-        ))}
-      </ul>
+        </>
+      ))}
     </Style.Wrapper>
   );
 }

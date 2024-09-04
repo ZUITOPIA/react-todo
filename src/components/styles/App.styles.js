@@ -19,5 +19,6 @@ export const Style = {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+    margin-bottom: 20px;
   `,
 };
