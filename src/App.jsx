@@ -39,7 +39,11 @@ export default function App() {
   return (
     <Style.AppWrapper>
       <Style.Header>
-        <Text.Title>SCHEDULE</Text.Title>
+        <Style.TitleWrapper>
+          <Text.Title>SCHEDULE</Text.Title>
+          <Style.GameIcon src="game2.png" alt="game" />
+        </Style.TitleWrapper>
+
         <Input addTodo={handleAddTodo} />
       </Style.Header>
 
