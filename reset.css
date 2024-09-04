@@ -3,9 +3,9 @@
    License: none (public domain)
 */
 @font-face {
-  font-family: "RixXladywatermelonR";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2")
-    format("woff2");
+  font-family: "DungGeunMo";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -113,16 +113,20 @@ section {
   display: block;
 }
 body {
-  font-family: "RixXladywatermelonR";
+  font-family: "DungGeunMo";
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #595ca1;
+  background-image: url("/public/arcade.png");
+  background-size: 80%;
+  background-position: 49%;
+  background-repeat: no-repeat;
 }
 input {
-  font-family: "RixXladywatermelonR";
+  font-family: "DungGeunMo";
 }
 ol,
 ul {

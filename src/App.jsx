@@ -43,21 +43,23 @@ export default function App() {
         <Input addTodo={handleAddTodo} />
       </Style.Header>
 
-      <TaskSection
-        title="IN PROGRESS"
-        items={todos}
-        onToggle={handleToggleTodo}
-        onDelete={deleteTodo}
-        isCompleted={false}
-      />
+      <Style.TaskSectionWrapper>
+        <TaskSection
+          title="IN PROGRESS"
+          items={todos}
+          onToggle={handleToggleTodo}
+          onDelete={deleteTodo}
+          isCompleted={false}
+        />
 
-      <TaskSection
-        title="COMPLETED"
-        items={completed}
-        onToggle={handleToggleTodo}
-        onDelete={deleteDone}
-        isCompleted={true}
-      />
+        <TaskSection
+          title="COMPLETED"
+          items={completed}
+          onToggle={handleToggleTodo}
+          onDelete={deleteDone}
+          isCompleted={true}
+        />
+      </Style.TaskSectionWrapper>
     </Style.AppWrapper>
   );
 }
