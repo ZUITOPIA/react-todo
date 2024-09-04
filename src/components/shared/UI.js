@@ -22,6 +22,7 @@ export const Text = {
     font-size: 16px;
     color: #cbcbcd;
     display: inline-block;
+    text-decoration-line: line-through;
   `,
 };
 
