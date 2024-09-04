@@ -22,7 +22,7 @@ export const Style = {
   `,
   GameIcon: styled.img`
     width: 35px;
-    margin-left: 10px;
+    margin-right: 10px;
   `,
   TaskSectionWrapper: styled.div`
     display: flex;

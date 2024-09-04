@@ -40,8 +40,8 @@ export default function App() {
     <Style.AppWrapper>
       <Style.Header>
         <Style.TitleWrapper>
-          <Text.Title>SCHEDULE</Text.Title>
           <Style.GameIcon src="game2.png" alt="game" />
+          <Text.Title>SCHEDULE</Text.Title>
         </Style.TitleWrapper>
 
         <Input addTodo={handleAddTodo} />
