@@ -9,7 +9,7 @@ export default function App() {
   const [completed, setCompleted] = useLocalStorage("completed", []);
 
   const handleAddTodo = (todo) => {
-    setTodos([...todos, todo]);
+    setTodos([todo, ...todos]);
   };
 
   const handleToggleTodo = (index, isCompleted) => {
@@ -17,12 +17,12 @@ export default function App() {
       const newCompleted = completed.filter((_, i) => i !== index);
       const todoToMove = completed[index];
       setCompleted(newCompleted);
-      setTodos([...todos, todoToMove]);
+      setTodos([todoToMove, ...todos]);
     } else {
       const newTodos = todos.filter((_, i) => i !== index);
       const completedTodo = todos[index];
       setTodos(newTodos);
-      setCompleted([...completed, completedTodo]);
+      setCompleted([completedTodo, ...completed]);
     }
   };
 
