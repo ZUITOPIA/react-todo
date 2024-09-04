@@ -1,4 +1,4 @@
-import Content from "./components/shared/Content";
+import Content from "./components/shared/Task";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/Input";
 import { Text } from "./components/shared/UI";
