@@ -1,4 +1,4 @@
-import Content from "./components/shared/Task";
+import TaskSection from "./components/shared/TaskSection";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/Input";
 import { Text } from "./components/shared/UI";
@@ -42,25 +42,22 @@ export default function App() {
         <Text.Title>SCHEDULE</Text.Title>
         <Input addTodo={handleAddTodo} />
       </Style.Header>
-      <Style.TaskWrapper>
-        <Text.MiniTitle>IN PROGRESS ({todos.length})</Text.MiniTitle>
-        <Content
-          items={todos}
-          onToggle={handleToggleTodo}
-          onDelete={deleteTodo}
-          isCompleted={false}
-        />
-      </Style.TaskWrapper>
 
-      <Style.TaskWrapper>
-        <Text.MiniTitle>COMPLETED ({completed.length})</Text.MiniTitle>
-        <Content
-          items={completed}
-          onToggle={handleToggleTodo}
-          onDelete={deleteDone}
-          isCompleted={true}
-        />
-      </Style.TaskWrapper>
+      <TaskSection
+        title="IN PROGRESS"
+        items={todos}
+        onToggle={handleToggleTodo}
+        onDelete={deleteTodo}
+        isCompleted={false}
+      />
+
+      <TaskSection
+        title="COMPLETED"
+        items={completed}
+        onToggle={handleToggleTodo}
+        onDelete={deleteDone}
+        isCompleted={true}
+      />
     </Style.AppWrapper>
   );
 }
