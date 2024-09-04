@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Style = {
   Wrapper: styled.div`
     width: 100%;
-    height: 200px;
+    height: 260px;
     overflow-y: scroll;
     margin-top: 10px;
   `,

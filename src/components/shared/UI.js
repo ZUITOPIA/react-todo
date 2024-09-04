@@ -8,7 +8,7 @@ export const Text = {
   `,
   MiniTitle: styled.div`
     font-weight: 650;
-    font-size: 14px;
+    font-size: 18px;
     display: inline-block;
     color: #464979;
   `,
