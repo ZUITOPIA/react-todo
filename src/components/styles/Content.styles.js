@@ -5,6 +5,7 @@ export const Style = {
     width: 100%;
     height: 200px;
     overflow-y: scroll;
+    margin-top: 10px;
   `,
   ItemWrapper: styled.div`
     display: flex;

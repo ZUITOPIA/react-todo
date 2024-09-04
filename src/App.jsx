@@ -43,7 +43,7 @@ export default function App() {
         <Input addTodo={handleAddTodo} />
       </Style.Header>
       <Style.TaskWrapper>
-        <Text.MiniTitle>{todos.length} tasks</Text.MiniTitle>
+        <Text.MiniTitle>IN PROGRESS ({todos.length})</Text.MiniTitle>
         <Content
           items={todos}
           onToggle={handleToggleTodo}
@@ -53,7 +53,7 @@ export default function App() {
       </Style.TaskWrapper>
 
       <Style.TaskWrapper>
-        <Text.MiniTitle>{completed.length} tasks</Text.MiniTitle>
+        <Text.MiniTitle>COMPLETED ({completed.length})</Text.MiniTitle>
         <Content
           items={completed}
           onToggle={handleToggleTodo}
