@@ -1,4 +1,4 @@
-import Content from "./components/shared/Content";
+import Content from "./components/shared/Task";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/Input";
 import { Text } from "./components/shared/UI";
@@ -9,7 +9,7 @@ export default function App() {
   const [completed, setCompleted] = useLocalStorage("completed", []);
 
   const handleAddTodo = (todo) => {
-    setTodos([...todos, todo]);
+    setTodos([todo, ...todos]);
   };
 
   const handleToggleTodo = (index, isCompleted) => {
@@ -17,12 +17,12 @@ export default function App() {
       const newCompleted = completed.filter((_, i) => i !== index);
       const todoToMove = completed[index];
       setCompleted(newCompleted);
-      setTodos([...todos, todoToMove]);
+      setTodos([todoToMove, ...todos]);
     } else {
       const newTodos = todos.filter((_, i) => i !== index);
       const completedTodo = todos[index];
       setTodos(newTodos);
-      setCompleted([...completed, completedTodo]);
+      setCompleted([completedTodo, ...completed]);
     }
   };
 
@@ -43,7 +43,7 @@ export default function App() {
         <Input addTodo={handleAddTodo} />
       </Style.Header>
       <Style.TaskWrapper>
-        <Text.MiniTitle>{todos.length} tasks</Text.MiniTitle>
+        <Text.MiniTitle>IN PROGRESS ({todos.length})</Text.MiniTitle>
         <Content
           items={todos}
           onToggle={handleToggleTodo}
@@ -53,7 +53,7 @@ export default function App() {
       </Style.TaskWrapper>
 
       <Style.TaskWrapper>
-        <Text.MiniTitle>{completed.length} tasks</Text.MiniTitle>
+        <Text.MiniTitle>COMPLETED ({completed.length})</Text.MiniTitle>
         <Content
           items={completed}
           onToggle={handleToggleTodo}

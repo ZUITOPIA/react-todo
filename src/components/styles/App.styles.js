@@ -18,6 +18,7 @@ export const Style = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    padding-left: 10px;
+    margin-bottom: 20px;
   `,
 };
