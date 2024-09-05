@@ -47,9 +47,20 @@ export default function App() {
             font-weight: normal;
             font-style: normal;
           }
-
           html,
-          body,
+          body {
+            font-family: "DungGeunMo";
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #595ca1;
+            background-image: url("/public/arcade.png");
+            background-size: 1430px;
+            background-position: 49%;
+            background-repeat: no-repeat;
+          }
           div,
           span,
           applet,
@@ -150,19 +161,7 @@ export default function App() {
           section {
             display: block;
           }
-          body {
-            font-family: "DungGeunMo";
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #595ca1;
-            background-image: url("/public/arcade.png");
-            background-size: 1430px;
-            background-position: 49%;
-            background-repeat: no-repeat;
-          }
+
           input {
             font-family: "DungGeunMo";
           }
