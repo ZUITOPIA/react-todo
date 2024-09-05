@@ -1,7 +1,7 @@
 import { Text, Button } from "./UI";
-import { Style } from "../styles/Task.styles";
+import { Style } from "../styles/Todo.styles";
 
-export default function TaskItem({ todo, isCompleted, onToggle, onDelete }) {
+export default function TodoItem({ todo, isCompleted, onToggle, onDelete }) {
   return (
     <Style.ItemWrapper>
       {isCompleted ? (
