@@ -4,7 +4,7 @@ import { Style } from "../styles/Input.styles";
 export default function Input({ addTodo }) {
   const [inputValue, handleChange, setInputValue] = useInput("");
 
-  const handleAddTodo = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     if (inputValue.trim() !== "") {
       addTodo(inputValue);
@@ -15,7 +15,7 @@ export default function Input({ addTodo }) {
   };
 
   return (
-    <form onSubmit={handleAddTodo}>
+    <form onSubmit={handleFormSubmit}>
       <Style.InputWrapper>
         <Style.Input
           type="text"

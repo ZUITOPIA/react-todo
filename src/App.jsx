@@ -8,7 +8,7 @@ export default function App() {
   const [todos, setTodos] = useLocalStorage("todos", []);
   const [completed, setCompleted] = useLocalStorage("completed", []);
 
-  const handleAddTodo = (todo) => {
+  const handleFormSubmit = (todo) => {
     setTodos([todo, ...todos]);
   };
 
@@ -44,7 +44,7 @@ export default function App() {
           <Text.Title>SCHEDULE</Text.Title>
         </Style.TitleWrapper>
 
-        <Input addTodo={handleAddTodo} />
+        <Input addTodo={handleFormSubmit} />
       </Style.Header>
 
       <Style.TaskSectionWrapper>
