@@ -184,6 +184,18 @@ export default function App() {
             border-collapse: collapse;
             border-spacing: 0;
           }
+          ::-webkit-scrollbar {
+            display: block;
+            width: 5px;
+          }
+          ::-webkit-scrollbar-track,
+          ::-webkit-scrollbar-button {
+            display: none;
+          }
+          ::-webkit-scrollbar-thumb {
+            background-color: yellow;
+            border-radius: 100px;
+          }
         `}
       />
 
