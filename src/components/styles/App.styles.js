@@ -33,7 +33,7 @@ export const Style = {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    padding-right: 30px;
+    padding-right: 20px;
     margin-bottom: 20px;
   `,
 };
