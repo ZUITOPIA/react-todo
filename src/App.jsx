@@ -56,7 +56,7 @@ export default function App() {
             justify-content: center;
             align-items: center;
             background-color: #595ca1;
-            background-image: url("/public/arcade.png");
+            background-image: url("/arcade.png");
             background-size: 1430px;
             background-position: 49%;
             background-repeat: no-repeat;
