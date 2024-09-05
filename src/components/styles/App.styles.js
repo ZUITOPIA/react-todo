@@ -32,7 +32,7 @@ export const Style = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
     margin-bottom: 20px;
   `,
