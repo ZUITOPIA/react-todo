@@ -1,8 +1,7 @@
 import TodoSection from "./components/shared/TodoSection";
 import useLocalStorage from "./components/hooks/useLocalStorage";
-import Input from "./components/shared/Input";
-import { Text } from "./components/shared/UI";
 import { Style } from "./components/styles/App.styles";
+import Header from "./Header";
 
 export default function App() {
   const [todos, setTodos] = useLocalStorage("todos", []);
@@ -38,14 +37,7 @@ export default function App() {
 
   return (
     <Style.AppWrapper>
-      <Style.Header>
-        <Style.TitleWrapper>
-          <Style.GameIcon src="game2.png" alt="game" />
-          <Text.Title>SCHEDULE</Text.Title>
-        </Style.TitleWrapper>
-
-        <Input addTodo={handleFormSubmit} />
-      </Style.Header>
+      <Header handleFormSubmit={handleFormSubmit} />
 
       <Style.TodoSectionWrapper>
         <TodoSection
