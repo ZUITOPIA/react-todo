@@ -9,7 +9,7 @@ export default function App() {
   const [completed, setCompleted] = useLocalStorage("completed", []);
 
   const handleFormSubmit = (todo) => {
-    setTodos([todo, ...todos]);
+    setTodos((prev) => [todo, ...prev]);
   };
 
   const handleToggleTodo = (index, isCompleted) => {
@@ -17,12 +17,12 @@ export default function App() {
       const newCompleted = completed.filter((_, i) => i !== index);
       const todoToMove = completed[index];
       setCompleted(newCompleted);
-      setTodos([todoToMove, ...todos]);
+      setTodos((prev) => [todoToMove, ...prev]);
     } else {
       const newTodos = todos.filter((_, i) => i !== index);
       const completedTodo = todos[index];
       setTodos(newTodos);
-      setCompleted([completedTodo, ...completed]);
+      setCompleted((prev) => [completedTodo, ...prev]);
     }
   };
 
