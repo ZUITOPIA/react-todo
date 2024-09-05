@@ -1,8 +1,8 @@
-import Task from "./Task";
+import Todo from "./Todo";
 import { Text } from "./UI";
 import { Style } from "../styles/App.styles";
 
-export default function TaskSection({
+export default function TodoSection({
   title,
   items,
   onToggle,
@@ -10,16 +10,16 @@ export default function TaskSection({
   isCompleted,
 }) {
   return (
-    <Style.TaskWrapper>
+    <Style.TodoWrapper>
       <Text.MiniTitle>
         {title} ({items.length})
       </Text.MiniTitle>
-      <Task
+      <Todo
         items={items}
         onToggle={onToggle}
         onDelete={onDelete}
         isCompleted={isCompleted}
       />
-    </Style.TaskWrapper>
+    </Style.TodoWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import TaskSection from "./components/shared/TaskSection";
+import TodoSection from "./components/shared/TodoSection";
 import useLocalStorage from "./components/hooks/useLocalStorage";
 import Input from "./components/shared/Input";
 import { Text } from "./components/shared/UI";
@@ -47,8 +47,8 @@ export default function App() {
         <Input addTodo={handleFormSubmit} />
       </Style.Header>
 
-      <Style.TaskSectionWrapper>
-        <TaskSection
+      <Style.TodoSectionWrapper>
+        <TodoSection
           title="IN PROGRESS"
           items={todos}
           onToggle={handleToggleTodo}
@@ -56,14 +56,14 @@ export default function App() {
           isCompleted={false}
         />
 
-        <TaskSection
+        <TodoSection
           title="COMPLETED"
           items={completed}
           onToggle={handleToggleTodo}
           onDelete={deleteDone}
           isCompleted={true}
         />
-      </Style.TaskSectionWrapper>
+      </Style.TodoSectionWrapper>
     </Style.AppWrapper>
   );
 }

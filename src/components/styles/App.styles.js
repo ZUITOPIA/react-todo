@@ -10,7 +10,6 @@ export const Style = {
     padding: 40px 30px 30px 50px;
     margin-bottom: 60px;
   `,
-
   Header: styled.header`
     width: 100%;
     height: 100px;
@@ -24,12 +23,12 @@ export const Style = {
     width: 35px;
     margin-right: 10px;
   `,
-  TaskSectionWrapper: styled.div`
+  TodoSectionWrapper: styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
   `,
-  TaskWrapper: styled.section`
+  TodoWrapper: styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -1,11 +1,11 @@
-import TaskItem from "./TaskItem";
-import { Style } from "../styles/Task.styles";
+import TodoItem from "./TodoItem";
+import { Style } from "../styles/Todo.styles";
 
-export default function Task({ items, onToggle, onDelete, isCompleted }) {
+export default function Todo({ items, onToggle, onDelete, isCompleted }) {
   return (
     <Style.Wrapper>
       {items.map((todo, index) => (
-        <TaskItem
+        <TodoItem
           key={index}
           todo={todo}
           isCompleted={isCompleted}
